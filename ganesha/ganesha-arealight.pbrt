@@ -1,8 +1,7 @@
 Sampler "halton"
-    "integer pixelsamples" [ 512 ]
-#PixelFilter "gaussian"
+    "integer pixelsamples" [ 64 ]
 Film "rgb"
-    "string filename" [ "ganesha.exr" ]
+    "string filename" [ "ganesha-no-statue.png" ]
     "integer yresolution" [ 1440 ]
     "integer xresolution" [ 1440 ]
 Scale -1 1 1
@@ -12,10 +11,9 @@ LookAt 328 40.282 245
 Camera "perspective"
     "float fov" [ 30 ]
 
-WorldBegin
+Integrator "randomwalk"
 
-Material "diffuse"
-    "rgb reflectance" [ 0.5 0.5 0.5 ]
+WorldBegin
 
 Shape "trianglemesh"
     "integer indices" [ 0 1 2 0 2 3 ]
@@ -23,6 +21,8 @@ Shape "trianglemesh"
                  -672 -42.000042 -1000 ]
 
 AttributeBegin
+    AreaLightSource "diffuse"
+        "rgb L" [ 15.258819 12.083925 9.589462 ]
     Shape "trianglemesh"
         "integer indices" [ 0 1 2 0 2 3 ]
         "point3 P" [ 220 61.367302 -343.62833 400 61.367302 -343.62833 400 238.63269
@@ -30,6 +30,11 @@ AttributeBegin
 AttributeEnd
 
 AttributeBegin
-    Shape "plymesh"
-        "string filename" [ "geometry/ganesha.ply.gz" ]
+    AreaLightSource "diffuse"
+        "rgb L" [ 15.258819 12.083925 9.589462 ]
+    ReverseOrientation
+    Shape "trianglemesh"
+        "integer indices" [ 0 1 2 0 2 3 ]
+        "point3 P" [ 220 61.367302 343.62833 400 61.367302 343.62833 400 238.63269
+                     312.37167 220 238.63269 312.37167 ]
 AttributeEnd
