@@ -1,7 +1,7 @@
 Sampler "halton"
-    "integer pixelsamples" [ 64 ]
+    "integer pixelsamples" [ 32 ]
 Film "rgb"
-    "string filename" [ "ganesha-no-statue.png" ]
+    "string filename" [ "ganesha-arealight.png" ]
     "integer yresolution" [ 1440 ]
     "integer xresolution" [ 1440 ]
 Scale -1 1 1
